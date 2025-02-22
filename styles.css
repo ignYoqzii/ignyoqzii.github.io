@@ -1,0 +1,855 @@
+    /*************************************************************
+     *  GLOBAL STYLES
+     *************************************************************/
+    html {
+      scroll-behavior: smooth;
+      /* Smooth scroll for anchor links */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+      color: transparent;
+      background: #000;
+      /* Fallback if animations don't load */
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Dark Animated Background */
+
+    @keyframes background-gradient-animation {
+      0% {
+        --c-0: hsla(360, 0%, 2%, 1);
+        --x-0: 25%;
+        --y-0: 21%;
+        --s-start-0: 5%;
+        --s-end-0: 66%;
+        --c-1: hsla(360, 0%, 1%, 1);
+        --x-1: 82%;
+        --y-1: 19%;
+        --s-start-1: 5%;
+        --s-end-1: 66%;
+        --c-2: hsla(360, 0%, 0%, 1);
+        --x-2: 81%;
+        --y-2: 57%;
+        --s-start-2: 5%;
+        --s-end-2: 66%;
+        --c-3: hsla(360, 0%, 7%, 1);
+        --x-3: 90%;
+        --y-3: 98%;
+        --s-start-3: 5%;
+        --s-end-3: 66%;
+        --c-4: hsla(360, 0%, 4%, 1);
+        --x-4: 84%;
+        --y-4: 52%;
+        --s-start-4: 5%;
+        --s-end-4: 66%;
+      }
+
+      100% {
+        --c-0: hsla(360, 0%, 3%, 1);
+        --x-0: 0%;
+        --y-0: 5%;
+        --s-start-0: 5%;
+        --s-end-0: 66%;
+        --c-1: hsla(360, 0%, 2%, 1);
+        --x-1: 92%;
+        --y-1: 44%;
+        --s-start-1: 5%;
+        --s-end-1: 66%;
+        --c-2: hsla(360, 0%, 3%, 1);
+        --x-2: 66%;
+        --y-2: 71%;
+        --s-start-2: 5%;
+        --s-end-2: 66%;
+        --c-3: hsla(360, 0%, 1%, 1);
+        --x-3: 23%;
+        --y-3: 70%;
+        --s-start-3: 5%;
+        --s-end-3: 66%;
+        --c-4: hsla(360, 0%, 3%, 1);
+        --x-4: 48%;
+        --y-4: 63%;
+        --s-start-4: 5%;
+        --s-end-4: 66%;
+      }
+    }
+
+    @property --c-0 {
+      syntax: '<color>';
+      inherits: false;
+      initial-value: hsla(360, 0%, 2%, 1)
+    }
+
+    @property --x-0 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 25%
+    }
+
+    @property --y-0 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 21%
+    }
+
+    @property --s-start-0 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 5%
+    }
+
+    @property --s-end-0 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 66%
+    }
+
+    @property --c-1 {
+      syntax: '<color>';
+      inherits: false;
+      initial-value: hsla(360, 0%, 1%, 1)
+    }
+
+    @property --x-1 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 82%
+    }
+
+    @property --y-1 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 19%
+    }
+
+    @property --s-start-1 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 5%
+    }
+
+    @property --s-end-1 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 66%
+    }
+
+    @property --c-2 {
+      syntax: '<color>';
+      inherits: false;
+      initial-value: hsla(360, 0%, 0%, 1)
+    }
+
+    @property --x-2 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 81%
+    }
+
+    @property --y-2 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 57%
+    }
+
+    @property --s-start-2 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 5%
+    }
+
+    @property --s-end-2 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 66%
+    }
+
+    @property --c-3 {
+      syntax: '<color>';
+      inherits: false;
+      initial-value: hsla(360, 0%, 7%, 1)
+    }
+
+    @property --x-3 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 90%
+    }
+
+    @property --y-3 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 98%
+    }
+
+    @property --s-start-3 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 5%
+    }
+
+    @property --s-end-3 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 66%
+    }
+
+    @property --c-4 {
+      syntax: '<color>';
+      inherits: false;
+      initial-value: hsla(360, 0%, 4%, 1)
+    }
+
+    @property --x-4 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 84%
+    }
+
+    @property --y-4 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 52%
+    }
+
+    @property --s-start-4 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 5%
+    }
+
+    @property --s-end-4 {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: 66%
+    }
+
+    body::before {
+      --c-0: hsla(360, 0%, 2%, 1);
+      --x-0: 25%;
+      --y-0: 21%;
+      --c-1: hsla(360, 0%, 1%, 1);
+      --x-1: 82%;
+      --y-1: 19%;
+      --c-2: hsla(360, 0%, 0%, 1);
+      --x-2: 81%;
+      --y-2: 57%;
+      --c-3: hsla(360, 0%, 7%, 1);
+      --x-3: 90%;
+      --y-3: 98%;
+      --c-4: hsla(360, 0%, 4%, 1);
+      --x-4: 84%;
+      --y-4: 52%;
+      background-color: hsla(360, 0%, 5%, 1);
+      z-index: -1;
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0), transparent var(--s-end-0)), radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1), transparent var(--s-end-1)), radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2), transparent var(--s-end-2)), radial-gradient(circle at var(--x-3) var(--y-3), var(--c-3) var(--s-start-3), transparent var(--s-end-3));
+      animation: background-gradient-animation 20s linear infinite alternate;
+      background-blend-mode: normal, normal, normal, normal;
+      filter: blur(40px);
+    }
+
+    /* Gradient Text */
+    .blue-gradient-text {
+      background: linear-gradient(135deg, #294f97, #6bcae8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% 200%;
+      animation: gradientAnimation 5s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Utility classes for sections */
+
+    /* Apply white gradient to all text by default */
+    h1, h2, span {
+      background: linear-gradient(90deg, #ffffff, #000000);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    h4, a {
+      background: linear-gradient(135deg, #294f97, #6bcae8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% 200%;
+      animation: gradientAnimation 5s ease infinite;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      /* For any pseudo-elements or shape dividers */
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0 0 20px;
+      line-height: 1.6;
+      color: #ffffff;
+    }
+
+    /*************************************************************
+       *  NAVIGATION
+       *************************************************************/
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      background: linear-gradient(135deg, #294f97, #6bcae8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% 200%;
+      animation: gradientAnimation 5s ease infinite;
+    }
+
+    /*************************************************************
+       *  HERO SECTION
+       *************************************************************/
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-top: 100px;
+      padding-bottom: 100px;
+      position: relative;
+    }
+
+    /* Continuous Jumping Animation for Hero Title */
+    @keyframes continuousJump {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      animation: continuousJump 2s ease-in-out infinite;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: heroTextFade 1.2s ease-out forwards 0.5s;
+    }
+
+    @keyframes heroTitleSlide {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heroTextFade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* CTA Button in Hero */
+    .hero .btn-cta {
+      display: inline-block;
+      padding: 15px 30px;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .hero .btn-cta:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /*************************************************************
+       *  REVEAL ANIMATION CLASSES (used for scroll-triggered effects)
+       *************************************************************/
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /*************************************************************
+       *  ABOUT ME SECTION
+       *************************************************************/
+    .about-me {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 40px;
+      margin-top: 40px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(4px);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .about-me:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .about-me h2 {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .about-me p {
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    /*************************************************************
+       *  PROJECTS SECTION
+       *************************************************************/
+    /* Carousel Styles */
+    .carousel-container {
+      position: relative;
+      max-width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .carousel-slide {
+      display: flex;
+      width: 100%;
+    }
+
+    .project-card {
+      min-width: 100%;
+      box-sizing: border-box;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: box-shadow 0.3s;
+      backdrop-filter: blur(4px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-card img {
+      width: 80%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 30px;
+      /* Add margin to leave space for the text */
+    }
+
+    .project-card h3 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .project-card p {
+      font-size: 0.95em;
+      margin-bottom: 0;
+    }
+
+    .carousel-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .carousel-button {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 2rem;
+      cursor: pointer;
+      margin: 0 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+
+    .carousel-button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /*************************************************************
+   *  STATS / ACHIEVEMENTS SECTION
+   *************************************************************/
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .stat-item {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      width: 200px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(4px);
+    }
+
+    .stat-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .stat-item .counter {
+      font-size: 2.5em;
+      display: block;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #294f97, #6bcae8);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% 200%;
+      animation: gradientAnimation 5s ease infinite;
+    }
+
+    /*************************************************************
+       *  TIMELINE SECTION
+       *************************************************************/
+    .timeline {
+      margin-top: 50px;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 20px 30px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(4px);
+      transition: transform 0.4s;
+    }
+
+    .timeline-item:hover {
+      transform: scale(1.02);
+    }
+
+    .timeline-item h4 {
+      margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+      margin-bottom: 0;
+    }
+
+    /* Left / Right side positioning */
+    .timeline-item-left {
+      left: 0;
+      transform-origin: left center;
+    }
+
+    .timeline-item-right {
+      left: 50%;
+      transform-origin: right center;
+    }
+
+    .timeline-item-left::after,
+    .timeline-item-right::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      width: 10px;
+      height: 10px;
+      background: #00ffe7;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+
+    .timeline-item-left::after {
+      right: -20px;
+    }
+
+    .timeline-item-right::after {
+      left: -20px;
+    }
+
+    /*************************************************************
+       *  FAQ SECTION (Accordion)
+       *************************************************************/
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      margin-top: 40px;
+    }
+
+    .faq-question::after {
+      content: "▼";
+      font-size: 0.8em;
+      color: #bbb;
+      position: absolute;
+      right: 20px;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-question::after {
+      transform: rotate(180deg);
+    }
+
+    .faq-item {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      backdrop-filter: blur(4px);
+    }
+
+    .faq-question {
+      padding: 15px 20px;
+      cursor: pointer;
+      position: relative;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .faq-question:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .faq-answer {
+      padding: 20px 20px 15px 20px;
+      display: none;
+      font-weight: 300;
+      color: #bbb;
+      /* Hidden by default */
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+      /* Show when open */
+    }
+
+    /*************************************************************
+       *  STARZ TEAM SECTION
+       *************************************************************/
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .team-card {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .team-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 20%;
+      margin-bottom: 15px;
+    }
+
+    .team-card h4 {
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+
+    .team-card span {
+      font-size: 0.9em;
+      color: #bbb;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /*************************************************************
+       *  CONTACT SECTION
+       *************************************************************/
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .contact-container p {
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+
+    .contact-container .btn-contact {
+      display: inline-block;
+      padding: 15px 30px;
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .contact-container .btn-contact:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /*************************************************************
+       *  FOOTER
+       *************************************************************/
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 60px;
+      color: #777;
+      font-size: 0.9em;
+    }
+
+    /*************************************************************
+       *  RESPONSIVE DESIGN
+       *************************************************************/
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 15px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+
+      .timeline-item {
+        width: 90%;
+        left: 5% !important;
+      }
+
+      .timeline::before {
+        left: 5%;
+      }
+
+      .timeline-item-left::after,
+      .timeline-item-right::after {
+        display: none;
+        /* Hide the dots on small screens if desired */
+      }
+    }
