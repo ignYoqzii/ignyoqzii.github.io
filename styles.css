@@ -833,7 +833,13 @@
        *************************************************************/
     @media (max-width: 768px) {
       nav ul {
-        gap: 15px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+
+      nav {
+        padding: 10px 0;
       }
 
       .hero h1 {
@@ -863,10 +869,14 @@
         min-width: 100%;
         padding: 10px;
       }
-
-      .carousel-buttons {
-        flex-direction: row;
-        gap: 10px;
+      .carousel-button {
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .carousel-button {
