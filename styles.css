@@ -565,18 +565,20 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      aspect-ratio: 1 / 1; /* Ensure the button remains a perfect circle */
       background-color: transparent;
       border: 1px solid rgba(255, 255, 255, 0.2);
       color: #ffffff;
       cursor: pointer;
       transition: background-color 0.3s;
       margin: 0 10px;
+      padding: 0; /* Ensure no padding is applied */
+      box-sizing: border-box; /* Ensure border-box sizing */
     }
     
     .carousel-button svg {
       width: 20px;
       height: 20px;
+      fill: currentColor; /* Ensure the SVG uses the current text color */
     }
     
     .carousel-button:hover {
