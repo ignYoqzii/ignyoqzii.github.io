@@ -31,6 +31,8 @@ const counterObserver = new IntersectionObserver((entries) => {
                 counter.textContent = currentValue;
                 if (currentValue < targetValue) {
                     requestAnimationFrame(updateCounter);
+                } else if (currentValue === 560) { // For the + sign
+                    counter.textContent = `${currentValue}+`;
                 }
             };
             requestAnimationFrame(updateCounter);
