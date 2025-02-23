@@ -519,7 +519,6 @@
       box-sizing: border-box;
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 10px;
-      padding: 20px;
       text-align: center;
       transition: box-shadow 0.3s;
       backdrop-filter: blur(4px);
@@ -536,8 +535,9 @@
       height: auto;
       object-fit: cover;
       border-radius: 10px 10px 0 0;
-      margin-bottom: 30px;
-      /* Add margin to leave space for the text */
+      margin-bottom: 10px;
+      margin-top: 10px;
+      /* Adjust margin to reduce space under the text */
     }
 
     .project-card h3 {
@@ -548,7 +548,7 @@
 
     .project-card p {
       font-size: 0.95em;
-      margin-bottom: 0;
+      margin-bottom: 10px;
     }
 
     .carousel-buttons {
@@ -833,9 +833,12 @@
        *************************************************************/
     @media (max-width: 768px) {
       nav ul {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
         align-items: center;
+        padding: 0;
+        display: flex;
+        justify-content: center;
       }
 
       nav {
@@ -862,13 +865,14 @@
       .timeline-item-left::after,
       .timeline-item-right::after {
         display: none;
-        /* Hide the dots on small screens if desired */
+        /* Hide the dots on small screens */
       }
 
       .project-card {
         min-width: 100%;
         padding: 10px;
       }
+
       .carousel-button {
         font-size: 1.5rem;
         width: 40px;
@@ -877,11 +881,5 @@
         display: flex;
         justify-content: center;
         align-items: center;
-      }
-
-      .carousel-button {
-        font-size: 1.5rem;
-        width: 40px;
-        height: 40px;
       }
     }
