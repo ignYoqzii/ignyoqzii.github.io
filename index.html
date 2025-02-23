@@ -12,6 +12,16 @@
     <title>Yoqzii's Portfolio</title>
   </head>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-88PD2EP1LH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-88PD2EP1LH');
+  </script>
+
   <body>
     <!-- NAVIGATION BAR -->
     <nav>
@@ -141,8 +151,8 @@
         </div>
         <!-- Stat 4 -->
         <div class="stat-item reveal">
-          <span class="counter" data-target="99">0</span>
-          <p>Positive Feedback (%)</p>
+          <span class="counter" id="viewsCount">0</span>
+          <p>Website Views</p>
         </div>
       </div>
     </section>
