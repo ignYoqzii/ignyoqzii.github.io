@@ -558,18 +558,27 @@
     }
 
     .carousel-button {
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      aspect-ratio: 1 / 1; /* Ensure the button remains a perfect circle */
       background-color: transparent;
       border: 1px solid rgba(255, 255, 255, 0.2);
       color: #ffffff;
-      font-size: 2rem;
       cursor: pointer;
-      margin: 0 10px;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
       transition: background-color 0.3s;
+      margin: 0 10px;
     }
-
+    
+    .carousel-button svg {
+      width: 20px;
+      height: 20px;
+    }
+    
     .carousel-button:hover {
       background-color: rgba(255, 255, 255, 0.2);
     }
