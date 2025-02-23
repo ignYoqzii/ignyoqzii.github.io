@@ -78,18 +78,3 @@ nextBtn.addEventListener('click', () => {
 });
 
 window.addEventListener('resize', updateCarousel);
-
-// Fetch and display website views count
-async function fetchViewsCount() {
-    const response = await fetch('https://www.googleapis.com/analytics/v3/data/ga?ids=ga:VIEW_ID&start-date=30daysAgo&end-date=today&metrics=ga:pageviews', {
-        headers: {
-            'Authorization': 'Bearer ACCESS_TOKEN'
-        }
-    });
-    const data = await response.json();
-    const viewsCount = data.totalsForAllResults['ga:pageviews'];
-    document.getElementById('viewsCount').textContent = viewsCount;
-}
-
-// Call the function to fetch and display views count
-fetchViewsCount();
