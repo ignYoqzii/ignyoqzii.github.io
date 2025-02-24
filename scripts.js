@@ -78,3 +78,77 @@ nextBtn.addEventListener('click', () => {
 });
 
 window.addEventListener('resize', updateCarousel);
+
+// JavaScript for Stars Animation
+const canvas = document.getElementById('starsCanvas');
+const ctx = canvas.getContext('2d');
+let stars = [];
+const numStars = 100;
+const starSpeed = 0.1;
+const starSize = 2;
+let mouseX = canvas.width / 2;
+let mouseY = canvas.height / 2;
+let lastMouseX = mouseX;
+let lastMouseY = mouseY;
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  stars = [];
+  createStars();
+});
+
+window.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+function createStars() {
+  for (let i = 0; i < numStars; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * starSize,
+      speedX: (Math.random() - 0.5) * starSpeed,
+      speedY: (Math.random() - 0.5) * starSpeed,
+      followMouse: Math.random() < 0.5 // 50% chance to follow the mouse
+    });
+  }
+}
+
+function updateStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const deltaX = mouseX - lastMouseX;
+  const deltaY = mouseY - lastMouseY;
+  stars.forEach(star => {
+    if (star.followMouse) {
+      // Move stars slightly based on mouse position
+      star.x += star.speedX + deltaX * 0.01;
+      star.y += star.speedY + deltaY * 0.01;
+    } else {
+      // Move stars randomly
+      star.x += star.speedX;
+      star.y += star.speedY;
+    }
+
+    // Wrap stars around the edges
+    if (star.x < 0) star.x = canvas.width;
+    if (star.x > canvas.width) star.x = 0;
+    if (star.y < 0) star.y = canvas.height;
+    if (star.y > canvas.height) star.y = 0;
+
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+    ctx.fill();
+  });
+  lastMouseX = mouseX;
+  lastMouseY = mouseY;
+  requestAnimationFrame(updateStars);
+}
+
+createStars();
+updateStars();
