@@ -1,5 +1,5 @@
 // ==========================================================
-// 1. SCROLL REVEAL ANIMATION (KEPT)
+// 1. SCROLL REVEAL ANIMATION
 // ==========================================================
 const revealElements = document.querySelectorAll(".reveal");
 const observerOptions = { threshold: 0.1 };
@@ -18,7 +18,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealElements.forEach((el) => revealObserver.observe(el));
 
 // ==========================================================
-// 2. COUNTER ANIMATION (MODULARIZED)
+// 2. COUNTER ANIMATION
 // ==========================================================
 function setupCounters() {
   const counters = document.querySelectorAll(".counter");
@@ -57,7 +57,7 @@ function setupCounters() {
 setupCounters();
 
 // ==========================================================
-// 3. FAQ ACCORDION (FIXED FOR HEIGHT ANIMATION)
+// 3. FAQ ACCORDION
 // ==========================================================
 function setupFaqAccordion() {
   const faqItems = document.querySelectorAll(".faq-item");
@@ -78,7 +78,7 @@ function setupFaqAccordion() {
 setupFaqAccordion();
 
 // ==========================================================
-// 4. CAROUSEL FUNCTIONALITY (MODULARIZED)
+// 4. CAROUSEL FUNCTIONALITY
 // ==========================================================
 function setupCarousel() {
   const carousel = document.querySelector(".carousel");
@@ -115,7 +115,7 @@ function setupCarousel() {
 setupCarousel();
 
 // ==========================================================
-// 5. HERO PARALLAX (KEPT)
+// 5. HERO PARALLAX
 // ==========================================================
 function setupHeroParallax() {
   const heroTitle = document.querySelector(".hero h1");
@@ -136,7 +136,7 @@ function setupHeroParallax() {
 setupHeroParallax();
 
 // ==========================================================
-// 6. STARS ANIMATION (REVERTED TO ORIGINAL)
+// 6. STARS ANIMATION
 // ==========================================================
 function setupStarsAnimation() {
   const canvas = document.getElementById("starsCanvas");
@@ -231,3 +231,4 @@ function setupStarsAnimation() {
   animate();
 }
 setupStarsAnimation();
+
