@@ -3,184 +3,459 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts: Outfit -->
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="https://cdn.discordapp.com/avatars/937500438700376104/bdaf3915b1d84a471470c1b1bc15a4cf?size=1024" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      rel="stylesheet"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://cdn.discordapp.com/avatars/937500438700376104/bdaf3915b1d84a471470c1b1bc15a4cf?size=1024"
+      type="image/x-icon"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <title>Yoqzii's Portfolio</title>
+    <!-- Google Analytics Tag -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-88PD2EP1LH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-88PD2EP1LH");
+    </script>
   </head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-88PD2EP1LH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-88PD2EP1LH');
-  </script>
-
   <body>
+    <!-- =====================
+         Animated Stars Canvas
+    ====================== -->
     <canvas id="starsCanvas"></canvas>
-    <!-- NAVIGATION BAR -->
+
+    <!-- =====================
+         NAVIGATION BAR
+    ====================== -->
     <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about-me">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#starz-team">StarZ Team</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <div class="nav-container">
+        <a href="#hero" class="nav-brand">Yoqzii's Portfolio</a>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Open menu">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M3 6h18M3 12h18M3 18h18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about-me">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#starz-team">StarZ Team</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a class="nav-cta" href="#contact" aria-label="Contact me"
+          >Contact me</a
+        >
+      </div>
+      <div class="nav-overlay" aria-hidden="true"></div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="hero">
-      <h1>Hello, I'm <span class="blue-gradient-text">Yoqzii</span></h1>
-      <p>
-        I'm the creator of StarZ Team, where we build innovative projects. Dive
-        in to learn about me, my work, and our journey.
-      </p>
-      <div class="social-links">
-        <a href="https://discord.gg/ScR9MGbRSY" target="_blank" class="social-link">
-          <i class="fab fa-discord"></i>
-        </a>
-        <a href="https://www.youtube.com/@ignYoqzii" target="_blank" class="social-link">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://www.twitch.tv/yoqzii" target="_blank" class="social-link">
-          <i class="fab fa-twitch"></i>
-        </a>
-        <a href="https://github.com/ignYoqzii" target="_blank" class="social-link">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-    </section>
-
-    <!-- ABOUT ME SECTION -->
-    <section id="about-me" class="reveal">
-      <div class="about-me">
-        <h2>About Me</h2>
-        <p>
-          I'm a passionate developer and designer. From building Windows
-          applications, I love exploring new tech frontiers. Outside of coding,
-          I enjoy gaming, alot!
+    <!-- =====================
+         HERO SECTION
+         (Fullscreen Cinematic Intro)
+    ====================== -->
+    <section class="hero cinematic-hero" id="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Hello, I'm <span class="blue-gradient-text">Yoqzii.</span>
+        </h1>
+        <h2 class="hero-subtitle">
+          Founder of <span class="blue-gradient-text">StarZ Team</span>
+        </h2>
+        <p class="hero-desc">
+          Building innovative digital experiences.<br />
+          Dive in to learn about me, my work, and my journey.
         </p>
+        <div class="social-links">
+          <a
+            href="https://discord.gg/ScR9MGbRSY"
+            target="_blank"
+            class="social-link"
+            ><i class="fab fa-discord"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/@ignYoqzii"
+            target="_blank"
+            class="social-link"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://www.twitch.tv/yoqzii"
+            target="_blank"
+            class="social-link"
+            ><i class="fab fa-twitch"></i
+          ></a>
+          <a
+            href="https://github.com/ignYoqzii"
+            target="_blank"
+            class="social-link"
+            ><i class="fab fa-github"></i
+          ></a>
+        </div>
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
+    <!-- =====================
+         ABOUT ME SECTION
+         (Card + Skills Grid)
+    ====================== -->
+    <section id="about-me" class="reveal">
+      <h2 class="section-title">About Me</h2>
+      <div
+        class="about-me about-flex"
+        style="background: none; box-shadow: none; border: none"
+      >
+        <!-- About Card (Bio + Fun Fact) -->
+        <div class="about-card interactive-card reveal">
+          <div class="about-desc">
+            <p>
+              I'm a passionate developer and student in Software Engineering at
+              Université Laval. From building Windows applications to exploring
+              new tech frontiers, I love to create and innovate.<br />
+              Outside of coding, I enjoy gaming, music, and learning new things!
+            </p>
+            <div class="fun-fact reveal">
+              <i class="fas fa-gamepad"></i> <span>Fun fact</span> I won bronze
+              medal in a tennis tournament some years ago! We were 3 players in
+              total, lol.
+            </div>
+          </div>
+        </div>
+        <!-- Skills Grid (No Card) -->
+        <div class="about-skills-standalone reveal">
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fab fa-python"></i><span>Python</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-code"></i><span>C#</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-github"></i><span>GitHub</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-robot"></i><span>AI</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-paint-brush"></i><span>UI Design</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-film"></i><span>Video Editing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================
+         PROJECTS SECTION
+         (Carousel)
+    ====================== -->
     <section id="projects" class="reveal">
-      <h2 class="section-title">My Projects</h2>
-      <p style="text-align:center;">
-        Check out some of the projects I've developed under StarZ, each
-        highlighting sleek design and cutting‐edge functionality.
-      </p>
+      <h2 class="section-title">Projects</h2>
       <div class="carousel-container">
         <div class="carousel">
           <div class="carousel-slide">
             <!-- Project 1 -->
             <div class="project-card">
-              <img src="https://raw.githubusercontent.com/ignYoqzii/StarZLauncher/refs/heads/main/StarZ%20Launcher/StarZLauncher/Resources/ScreenShotLightMode.png" alt="Project Icon 1" />
-              <h3>StarZ Launcher</h3>
-                <p>A Powerful and User-Friendly <a href="https://starzcommunity.github.io/starzlauncher.html" target="_blank">Minecraft Launcher/Injector</a> for
-                Windows (Bedrock Edition)</p>
+              <a
+                class="project-media"
+                href="https://github.com/ignYoqzii/StarZLauncher"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/ignYoqzii/StarZLauncher/refs/heads/main/StarZ%20Launcher/StarZLauncher/Resources/ScreenShotLightMode.png"
+                  alt="StarZ Launcher screenshot"
+                />
+              </a>
+              <div class="project-info">
+                <h3 class="project-title">
+                  <span class="blue-gradient-text">StarZ Launcher</span>
+                </h3>
+                <p class="project-desc">
+                  A powerful and user‑friendly Minecraft Launcher/Injector for
+                  Windows (Bedrock Edition).
+                </p>
+                <div class="project-actions">
+                  <a
+                    class="btn-github"
+                    href="https://github.com/ignYoqzii/StarZLauncher"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <i class="fab fa-github"></i>
+                    <span>View on GitHub</span>
+                  </a>
+                </div>
+              </div>
             </div>
             <!-- Project 2 -->
             <div class="project-card">
-              <img src="https://github.com/ignYoqzii/GeoGuessrPlayer/blob/main/GeoGuessrPlayer/Resources/GeoGuessrPlayerSS.png?raw=true" alt="Project Icon 2" />
-              <h3>GeoGuessr Player</h3>
-              <p><a href="https://github.com/ignYoqzii/GeoGuessrPlayer" target="_blank">A GeoGuessr Application/Player</a> with Discord Rich Presence
-                implementation and other tools to enhance the gaming experience.</p>
+              <a
+                class="project-media"
+                href="https://github.com/ignYoqzii/GeoGuessrPlayer"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="https://github.com/ignYoqzii/GeoGuessrPlayer/blob/main/GeoGuessrPlayer/Resources/GeoGuessrPlayerSS.png?raw=true"
+                  alt="GeoGuessr Player screenshot"
+                />
+              </a>
+              <div class="project-info">
+                <h3 class="project-title">
+                  <span class="blue-gradient-text">GeoGuessr Player</span>
+                </h3>
+                <p class="project-desc">
+                  A desktop player with Discord Rich Presence and tools to
+                  enhance your GeoGuessr sessions.
+                </p>
+                <div class="project-actions">
+                  <a
+                    class="btn-github"
+                    href="https://github.com/ignYoqzii/GeoGuessrPlayer"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <i class="fab fa-github"></i>
+                    <span>View on GitHub</span>
+                  </a>
+                </div>
+              </div>
             </div>
             <!-- Project 3 -->
             <div class="project-card">
-              <img src="https://github.com/ignYoqzii/StarZFinance/blob/master/StarZFinance/Resources/StarZFinanceSS.png?raw=true" alt="Project Icon 3" />
-              <h3>StarZ Finance</h3>
-              <p><a href="https://github.com/ignYoqzii/StarZFinance" target="_blank">StarZ Finance</a> is a comprehensive financial application that
-                combines AI-driven market predictions with personalized
-                financial tools, offering a user-friendly interface and advanced
-                mathematical modeling.</p>
+              <a
+                class="project-media"
+                href="https://github.com/ignYoqzii/StarZFinance"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="https://github.com/ignYoqzii/StarZFinance/blob/master/StarZFinance/Resources/StarZFinanceSS.png?raw=true"
+                  alt="StarZ Finance screenshot"
+                />
+              </a>
+              <div class="project-info">
+                <h3 class="project-title">
+                  <span class="blue-gradient-text">StarZ Finance</span>
+                </h3>
+                <p class="project-desc">
+                  A finance app combining AI‑driven market predictions with
+                  intuitive tools and clean UI.
+                </p>
+                <div class="project-actions">
+                  <a
+                    class="btn-github"
+                    href="https://github.com/ignYoqzii/StarZFinance"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <i class="fab fa-github"></i>
+                    <span>View on GitHub</span>
+                  </a>
+                </div>
+              </div>
             </div>
             <!-- Project 4 -->
             <div class="project-card">
-              <img src="https://github.com/ignYoqzii/StarZInjector/raw/master/Assets/StarZInjectorScreenShot.png?raw=true" alt="Project Icon 4" />
-              <h3>StarZ Injector</h3>
-              <p><a href="https://github.com/ignYoqzii/StarZInjector" target="_blank">StarZ Injector</a> is a .NET 9.0 Windows application designed for DLL injection into target processes. It leverages WPF UI (WinUI 3 for WPF) for the user interface and includes features such as theme customization, Discord Rich Presence, and various injection methods.</p>
+              <a
+                class="project-media"
+                href="https://github.com/ignYoqzii/StarZInjector"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="https://github.com/ignYoqzii/StarZInjector/raw/master/Assets/StarZInjectorScreenShot.png?raw=true"
+                  alt="StarZ Injector screenshot"
+                />
+              </a>
+              <div class="project-info">
+                <h3 class="project-title">
+                  <span class="blue-gradient-text">StarZ Injector</span>
+                </h3>
+                <p class="project-desc">
+                  A .NET 9.0 Windows app for safe, configurable DLL injection
+                  with theming and Rich Presence.
+                </p>
+                <div class="project-actions">
+                  <a
+                    class="btn-github"
+                    href="https://github.com/ignYoqzii/StarZInjector"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <i class="fab fa-github"></i>
+                    <span>View on GitHub</span>
+                  </a>
+                </div>
+              </div>
             </div>
             <!-- Project 5 -->
             <div class="project-card">
-              <img src="https://raw.githubusercontent.com/ignYoqzii/GuessMate/refs/heads/master/GuessMate/Assets/Screenshot1.png" alt="Project Icon 5" />
-              <h3>GuessMate</h3>
-              <p><a href="https://github.com/ignYoqzii/GuessMate" target="_blank">GuessMate</a>, your favorite Wordle companion app.</p>
+              <a
+                class="project-media"
+                href="https://github.com/ignYoqzii/GuessMate"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/ignYoqzii/GuessMate/refs/heads/master/GuessMate/Assets/Screenshot1.png"
+                  alt="GuessMate screenshot"
+                />
+              </a>
+              <div class="project-info">
+                <h3 class="project-title">
+                  <span class="blue-gradient-text">GuessMate</span>
+                </h3>
+                <p class="project-desc">
+                  A polished Wordle companion app built for quick and smart
+                  guesses.
+                </p>
+                <div class="project-actions">
+                  <a
+                    class="btn-github"
+                    href="https://github.com/ignYoqzii/GuessMate"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <i class="fab fa-github"></i>
+                    <span>View on GitHub</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <!-- Carousel Navigation Buttons -->
         <div class="carousel-buttons">
-            <button class="carousel-button" id="prevBtn">
-            <svg width="20" height="20" viewBox="0 0 532 532" xmlns="http://www.w3.org/2000/svg">
-              <path d="M355.66 11.354c13.793-13.805 36.208-13.805 50.001 0 13.785 13.804 13.785 36.238 0 50.034L201.22 266l204.442 204.61c13.785 13.805 13.785 36.239 0 50.044-13.793 13.796-36.208 13.796-50.002 0a5994246.277 5994246.277 0 0 0-229.332-229.454 35.065 35.065 0 0 1-10.326-25.126c0-9.2 3.393-18.26 10.326-25.2C172.192 194.973 332.731 34.31 355.66 11.354Z" fill="currentColor"/>
+          <button
+            class="carousel-button"
+            id="prevBtn"
+            aria-label="Previous project"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 532 532"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M355.66 11.354c13.793-13.805 36.208-13.805 50.001 0 13.785 13.804 13.785 36.238 0 50.034L201.22 266l204.442 204.61c13.785 13.805 13.785 36.239 0 50.044-13.793 13.796-36.208 13.796-50.002 0a5994246.277 5994246.277 0 0 0-229.332-229.454 35.065 35.065 0 0 1-10.326-25.126c0-9.2 3.393-18.26 10.326-25.2C172.192 194.973 332.731 34.31 355.66 11.354Z"
+                fill="currentColor"
+              />
             </svg>
-            </button></svg></button>
-            <button class="carousel-button" id="nextBtn">
-              <svg width="20" height="20" viewBox="0 0 532 532" xmlns="http://www.w3.org/2000/svg">
-                <path d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z" fill="currentColor"/>
-              </svg>
-              </button></svg></button>
+          </button>
+          <button
+            class="carousel-button"
+            id="nextBtn"
+            aria-label="Next project"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 532 532"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- STATS / ACHIEVEMENTS SECTION -->
+    <!-- =====================
+         STATS / ACHIEVEMENTS SECTION
+    ====================== -->
     <section id="stats" class="reveal">
       <h2 class="section-title">Achievements</h2>
-      <p style="text-align:center;">
+      <p style="text-align: center">
         My milestones and StarZ achievements that have shaped my journey so far.
       </p>
-      <div class="stats-grid">
+      <div class="stats-grid reveal">
         <!-- Stat 1 -->
-        <div class="stat-item reveal">
-          <span class="counter" data-target="4">0</span>
+        <div class="stat-item">
+          <span class="counter" data-target="5">0</span>
           <p>Projects Completed</p>
         </div>
         <!-- Stat 2 -->
-        <div class="stat-item reveal">
+        <div class="stat-item">
           <span class="counter" data-target="4">0</span>
           <p>StarZ Team Members</p>
         </div>
         <!-- Stat 3 -->
-        <div class="stat-item reveal">
-          <span class="counter" data-target="540">0</span>
+        <div class="stat-item">
+          <span class="counter" data-target="500">0</span>
           <p>StarZ Community Members</p>
         </div>
         <!-- Stat 4 -->
-        <div class="stat-item reveal">
-          <span class="counter" data-target="116">0</span>
+        <div class="stat-item">
+          <span class="counter" data-target="148">0</span>
           <p>Website Views</p>
         </div>
       </div>
     </section>
 
-    <!-- TIMELINE SECTION -->
+    <!-- =====================
+         TIMELINE SECTION
+    ====================== -->
     <section id="timeline" class="reveal">
       <h2 class="section-title">My Journey</h2>
-      <p style="text-align:center;">
+      <p style="text-align: center">
         Follow the major milestones that shaped my path and the StarZ legacy.
       </p>
       <div class="timeline">
         <!-- Timeline Item 1 (Left) -->
         <div class="timeline-item timeline-item-left reveal">
           <h4>2019 - The Beginning</h4>
-          <p>Founded a small racing team on Forza Horizon 4, known as StarZ
-            Racing Club (SZR).</p>
+          <p>
+            Founded a small racing team on Forza Horizon 4, known as StarZ
+            Racing Club (SZR).
+          </p>
         </div>
         <!-- Timeline Item 2 (Right) -->
         <div class="timeline-item timeline-item-right reveal">
           <h4>2022 - StarZ Creation</h4>
-          <p>Along with the same friends, the StarZ Team was officialy
-            created.</p>
+          <p>
+            Along with the same friends, the StarZ Team was officialy created.
+          </p>
         </div>
         <!-- Timeline Item 3 (Left) -->
         <div class="timeline-item timeline-item-left reveal">
@@ -190,20 +465,88 @@
         <!-- Timeline Item 4 (Right) -->
         <div class="timeline-item timeline-item-right reveal">
           <h4>2025 - Cégep in Sciences</h4>
-          <p>Worked with @dede654alt on StarZ Finance as Natural Sciences students.</p>
+          <p>
+            Worked with @dede654alt on StarZ Finance as Natural Sciences
+            students.
+          </p>
         </div>
         <!-- Timeline Item 5 (Left) -->
         <div class="timeline-item timeline-item-left reveal">
           <h4>2026+ - The Future</h4>
-          <p>Studying at the Université Laval in Software Engineering for the next 4 years.</p>
+          <p>
+            Studying at the Université Laval in Software Engineering for the
+            next 4 years.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ SECTION -->
+    <!-- =====================
+         STARZ TEAM SECTION
+    ====================== -->
+    <section id="starz-team" class="reveal">
+      <h2 class="section-title">
+        Meet the <span class="blue-gradient-text">StarZ Team</span>
+      </h2>
+      <p style="text-align: center">
+        A passionate group of developers, gamers, and problem‐solvers dedicated
+        to building exceptional digital experiences.
+      </p>
+      <div class="team-grid" style="margin-top: 30px">
+        <!-- Team Member 1 -->
+        <div class="team-card reveal">
+          <img
+            src="https://cdn.discordapp.com/avatars/937500438700376104/bdaf3915b1d84a471470c1b1bc15a4cf?size=1024"
+            alt="Team Member 1"
+          />
+          <h4>Yoqzii</h4>
+          <span>Owner, Lead Developer & Team Founder</span>
+          <p>
+            Founder of StarZ and oversee the majority, if not all, of the
+            projects developed by StarZ.
+          </p>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="team-card reveal">
+          <img
+            src="https://cdn.discordapp.com/avatars/808827570426085386/179286e900f9d0faf37d787906ad4670?size=1024"
+            alt="Team Member 2"
+          />
+          <h4>L1me</h4>
+          <span>Owner & Social Media Manager</span>
+          <p>
+            Manages all of StarZ's social media accounts and streams part-time.
+          </p>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="team-card reveal">
+          <img
+            src="https://cdn.discordapp.com/avatars/445557758205624322/7f5510aadf9595e57183ed03cf7f9fcb?size=1024"
+            alt="Team Member 3"
+          />
+          <h4>OliiR</h4>
+          <span>Co-Owner</span>
+          <p>Our little comedian.</p>
+        </div>
+        <!-- Team Member 4 -->
+        <div class="team-card reveal">
+          <img
+            src="https://cdn.discordapp.com/avatars/900177054622941194/586598fef1fe59c145caadc0b984420a?size=1024"
+            alt="Team Member 4"
+          />
+          <h4>dede654alt</h4>
+          <span>Co-Owner</span>
+          <p>Our maple syrup guy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================
+         FAQ SECTION
+    ====================== -->
     <section id="faq" class="reveal">
       <h2 class="section-title">FAQ</h2>
-      <p style="text-align:center;">
+      <p style="text-align: center">
         Answers to some common questions about StarZ Team and my personal work.
       </p>
       <div class="faq-container">
@@ -211,87 +554,85 @@
         <div class="faq-item">
           <div class="faq-question">What is StarZ Team?</div>
           <div class="faq-answer">
-            <p>StarZ began as a small gaming team among friends and is now
+            <p>
+              StarZ began as a small gaming team among friends and is now
               growing into a thriving community. We develop Windows applications
-              for a wide range of use cases.</p>
+              for a wide range of use cases.
+            </p>
           </div>
         </div>
         <!-- FAQ 2 -->
         <div class="faq-item">
           <div class="faq-question">How can I collaborate?</div>
           <div class="faq-answer">
-            <p>Feel free to reach out via the Contact section below. We're
-              always open to new partnerships and ideas.</p>
+            <p>
+              Feel free to reach out via the Contact section below. We're always
+              open to new partnerships and ideas.
+            </p>
           </div>
         </div>
         <!-- FAQ 3 -->
         <div class="faq-item">
           <div class="faq-question">What technologies do you use?</div>
           <div class="faq-answer">
-            <p>I primarily work with WPF, XAML, C#, Python, and other related
-              technologies for my projects.</p>
+            <p>
+              I primarily work with WPF, XAML, C#, Python, and other related
+              technologies for my projects.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- STARZ TEAM SECTION -->
-    <section id="starz-team" class="reveal">
-      <h2 class="section-title">Meet the <span class="blue-gradient-text">StarZ Team</span></h2>
-      <p style="text-align:center;">
-        A passionate group of developers, gamers, and problem‐solvers dedicated
-        to building exceptional digital experiences.
-      </p>
-      <div class="team-grid" style="margin-top:30px;">
-        <!-- Team Member 1 -->
-        <div class="team-card reveal">
-          <img src="https://cdn.discordapp.com/avatars/937500438700376104/bdaf3915b1d84a471470c1b1bc15a4cf?size=1024" alt="Team Member 1">
-          <h4>Yoqzii</h4>
-          <span>Owner, Lead Developer & Team Creator</span>
-          <p>Creator of StarZ and oversee the majority, if not all, of the
-            projects developed by StarZ.</p>
-        </div>
-        <!-- Team Member 2 -->
-        <div class="team-card reveal">
-          <img src="https://cdn.discordapp.com/avatars/808827570426085386/179286e900f9d0faf37d787906ad4670?size=1024" alt="Team Member 2">
-          <h4>L1me</h4>
-          <span>Owner & Social Media Manager</span>
-          <p>Manages all of StarZ's social media accounts and streams
-            part-time.</p>
-        </div>
-        <!-- Team Member 3 -->
-        <div class="team-card reveal">
-          <img src="https://cdn.discordapp.com/avatars/445557758205624322/7f5510aadf9595e57183ed03cf7f9fcb?size=1024" alt="Team Member 3">
-          <h4>OliiR</h4>
-          <span>Co-Owner</span>
-          <p>Our little comedian.</p>
-        </div>
-        <!-- Team Member 4 -->
-        <div class="team-card reveal">
-          <img src="https://cdn.discordapp.com/avatars/900177054622941194/586598fef1fe59c145caadc0b984420a?size=1024" alt="Team Member 4">
-          <h4>dede654alt</h4>
-          <span>Co-Owner</span>
-          <p>Our maple syrup guy.</p>
-        </div>
-      </section>
+    <!-- =====================
+         CONTACT SECTION
+    ====================== -->
+    <section id="contact" class="reveal">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-container" style="margin-top: 30px">
+        <p>
+          Whether you're interested in collaborating, have a question, or just
+          want to say hi, feel free to reach out. I'd love to hear from you!
+        </p>
+        <form
+          class="contact-form interactive-card"
+          id="contactForm"
+          autocomplete="off"
+        >
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="username@example.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-contact">Send Message</button>
+          <div
+            id="form-status"
+            style="margin-top: 10px; font-size: 0.98em"
+          ></div>
+        </form>
+      </div>
+    </section>
 
-      <!-- CONTACT SECTION -->
-      <section id="contact" class="reveal">
-        <h2 class="section-title">Get in Touch</h2>
-        <div class="contact-container" style="margin-top:30px;">
-          <p>
-            Whether you're interested in collaborating, have a question, or just
-            want to say hi, feel free to reach out. I'd love to hear from you!
-          </p>
-          <a href="mailto:szryoqziiofficial@gmail.com" class="btn-contact">Contact
-            Me</a>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer>
-        &copy; 2025 Yoqzii &mdash; Creator of StarZ Team. All rights reserved.
-      </footer>
-      <script src="scripts.js"></script>
-    </body>
-  </html>
+    <!-- =====================
+         FOOTER
+    ====================== -->
+    <footer>
+      &copy; 2025 Yoqzii &mdash; Founder of StarZ Team. All rights reserved.
+    </footer>
+    <!-- Main JS -->
+    <script src="scripts.js"></script>
+  </body>
+</html>

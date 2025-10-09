@@ -1,0 +1,25 @@
+/* ==========================================================
+ * VARIABLES
+ * Global CSS custom properties for colors, shadows, and glass effects
+ * ========================================================== */
+:root {
+  /* --- Colors & Shadows --- */
+  --color-primary: #6bcae8; /* Blue-Cyan for accents */
+  --color-secondary: #294f97; /* Darker Blue */
+  --color-text-light: #ffffff;
+  --color-text-medium: #bbb; /* Dimmer white for descriptive text */
+  --color-dark-bg: #000;
+  --shadow-dark: 0 8px 20px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 15px var(--color-primary);
+
+  /* --- Modular Glass / Transparency Variables (Ultra-Transparent) --- */
+  --glass-card-bg-start: rgba(255, 255, 255, 0.01); /* 1% opacity */
+  --glass-card-bg-end: rgba(255, 255, 255, 0.002); /* 0.2% opacity */
+  --glass-border-color: rgba(255, 255, 255, 0.03); /* 3% opacity */
+  --glass-inset-shadow: rgba(255, 255, 255, 0.01); /* 1% opacity */
+  --card-blur-filter: blur(12px);
+
+  /* --- Navigation Glass Variables --- */
+  --nav-glass-bg: rgba(255, 255, 255, 0.005); /* 0.5% opacity for nav/buttons */
+  --nav-blur-filter: blur(30px) saturate(200%) brightness(120%);
+}

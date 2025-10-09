@@ -1,0 +1,221 @@
+/* ==========================================================
+ * RESPONSIVE
+ * Media queries grouped by breakpoints
+ * ========================================================== */
+
+@media (max-width: 900px) {
+  .about-me {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0 10px 30px;
+  }
+  .about-card,
+  .about-skills-standalone {
+    max-width: 100%;
+    width: 100%;
+    align-items: stretch;
+    text-align: center;
+  }
+  .about-card .about-desc,
+  .about-skills {
+    align-items: center;
+    text-align: center;
+  }
+  .about-card .about-desc p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 10px 0;
+  }
+  .nav-container {
+    width: min(95vw, 100%);
+    padding: 8px 10px;
+    gap: 8px 10px;
+    grid-template-columns: 1fr auto; /* brand and cta on first row */
+    grid-template-areas:
+      "brand cta"
+      "links links";
+  }
+  .nav-links {
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    overflow: hidden; /* avoid horizontal scroll bounce */
+  }
+  .nav-brand {
+    justify-self: start;
+  }
+  .nav-cta {
+    justify-self: end;
+  }
+  .hero h1 {
+    font-size: 2.5em;
+  }
+  .hero p {
+    font-size: 1.1em;
+  }
+
+  .cinematic-hero .hero-title {
+    font-size: 2.5em;
+  }
+  .cinematic-hero .hero-subtitle {
+    font-size: 1.2em;
+  }
+  .cinematic-hero .hero-desc {
+    font-size: 1em;
+  }
+  .cinematic-hero .hero-content {
+    padding: 0 16px;
+    margin: 0 auto;
+    max-width: 640px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+  .timeline::before,
+  .timeline::after {
+    left: 20px;
+    transform: none;
+  }
+  .timeline-item {
+    /* Ensure cards don't overflow horizontally on mobile */
+    box-sizing: border-box;
+    width: calc(100% - 80px);
+    max-width: calc(100% - 80px);
+    float: none !important;
+    margin-left: 70px !important;
+    margin-right: 0 !important;
+    text-align: left !important;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  .timeline-item-left::after,
+  .timeline-item-right::after {
+    /* Align dot center with the vertical line at 20px */
+    left: -59px;
+    right: auto;
+  }
+  .timeline::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .timeline-item-left,
+  .timeline-item-right {
+    transform: translateX(0) !important;
+  }
+  .timeline-item:hover {
+    transform: none !important;
+  }
+  /* dot position already aligned above */
+}
+
+@media (max-width: 600px) {
+  /* Center 'About Me' layout better on narrow screens */
+  #about-me {
+    padding: 40px 14px;
+  }
+  .about-me {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .about-card .about-desc {
+    align-items: center;
+    text-align: center;
+  }
+  .about-skills-standalone {
+    justify-content: center;
+  }
+  .nav-cta {
+    padding: 6px 12px;
+    font-size: 0.95rem;
+  }
+  .nav-links a {
+    padding: 8px 10px;
+  }
+  /* Projects: tighten paddings and sizes on small screens */
+  .project-card {
+    padding: 12px;
+    gap: 12px;
+  }
+  .project-card .project-title {
+    font-size: 1.25rem;
+  }
+  .project-card .project-desc {
+    font-size: 0.95rem;
+  }
+  .contact-form {
+    padding: 18px 12px 14px 12px;
+    width: calc(100% - 24px);
+    max-width: 420px; /* keep consistent with base while fitting small screens */
+    box-sizing: border-box;
+  }
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    font-size: 0.98em;
+    padding: 10px 10px;
+  }
+  .contact-form .btn-contact {
+    font-size: 1em;
+    padding: 11px 0;
+    width: 100%;
+    display: block;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .stat-item {
+    padding: 24px 10px 20px 10px;
+    font-size: 0.98rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 14px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .skill-item {
+    width: 100%;
+    height: 100px;
+    font-size: 0.98rem;
+  }
+  .skill-item i {
+    font-size: 1.5rem;
+  }
+}
+
+/* On very narrow phones, switch to 2 columns to avoid crowding */
+@media (max-width: 420px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 360px;
+  }
+  .skill-item {
+    height: 110px;
+  }
+}
+
+/* Disable hover lifting on touch devices to prevent overlap/jitter */
+@media (hover: none) and (pointer: coarse) {
+  .skill-item:hover,
+  .about-skills-standalone .skill-item:hover {
+    transform: none !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08),
+      0 0 0 1px rgba(255, 255, 255, 0.06) inset !important;
+  }
+}
