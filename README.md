@@ -1,1 +1,1 @@
-# ignyoqzii.github.io
+# yoqzii.dev
