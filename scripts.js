@@ -488,7 +488,7 @@ function setupContactForm() {
       return;
     }
     // Open mail client with prefilled data
-    const mailto = `mailto:szryoqziiofficial@gmail.com?subject=Contact from ${encodeURIComponent(
+    const mailto = `mailto:lvsqyo4@gmail.com?subject=Contact from ${encodeURIComponent(
       email
     )}&body=${encodeURIComponent(message)}`;
     window.location.href = mailto;
@@ -564,3 +564,4 @@ function setupMobileNav() {
     });
   }
 }
+
