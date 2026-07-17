@@ -1,14 +1,14 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { motion, useReducedMotion } from 'motion/react'
-import { Menu, X } from 'lucide-react'
-import { navLinks, profile } from '@/lib/site-data'
-import { ThemeToggle } from '@/components/theme-toggle'
+import { useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { Menu, X } from "lucide-react";
+import { navLinks, profile } from "@/lib/site-data";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false)
-  const shouldReduceMotion = useReducedMotion()
+  const [open, setOpen] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <motion.header
@@ -22,9 +22,15 @@ export function SiteHeader() {
           href="#top"
           className="flex items-center gap-2 rounded-md text-sm font-medium tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
         >
-          <img src={profile.logo} alt={profile.name} className="size-8 rounded-full" />
+          <img
+            src={profile.logo}
+            alt={profile.name}
+            className="size-8 rounded-full"
+          />
           <span className="font-semibold">{profile.name}</span>
-          <span className="ml-2 hidden text-muted-foreground sm:inline">{profile.role}</span>
+          <span className="ml-2 hidden text-muted-foreground sm:inline">
+            {profile.role}
+          </span>
         </a>
 
         <div className="flex items-center gap-2">
@@ -54,15 +60,23 @@ export function SiteHeader() {
             aria-controls="mobile-nav"
             className="inline-flex items-center justify-center rounded-full p-2 text-foreground transition-colors hover:bg-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:hidden"
           >
-            <span className="sr-only">{open ? 'Close menu' : 'Open menu'}</span>
-            {open ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
+            <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+            {open ? (
+              <X className="size-5" aria-hidden="true" />
+            ) : (
+              <Menu className="size-5" aria-hidden="true" />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile nav */}
       {open && (
-        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-border/60 sm:hidden">
+        <nav
+          id="mobile-nav"
+          aria-label="Mobile"
+          className="border-t border-border/60 sm:hidden"
+        >
           <ul className="mx-auto flex max-w-5xl flex-col px-5 py-2">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -79,5 +93,5 @@ export function SiteHeader() {
         </nav>
       )}
     </motion.header>
-  )
+  );
 }

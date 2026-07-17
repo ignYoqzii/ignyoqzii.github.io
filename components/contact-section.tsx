@@ -1,7 +1,7 @@
-import { ArrowUpRight } from 'lucide-react'
-import { Reveal } from '@/components/reveal'
-import { SectionHeading } from '@/components/section-heading'
-import { profile } from '@/lib/site-data'
+import { ArrowUpRight } from "lucide-react";
+import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section-heading";
+import { profile } from "@/lib/site-data";
 
 export function ContactSection() {
   return (
@@ -10,14 +10,21 @@ export function ContactSection() {
       aria-labelledby="contact-heading"
       className="mx-auto max-w-5xl scroll-mt-20 px-5 py-16 sm:px-8 sm:py-24"
     >
-      <SectionHeading id="contact-heading" index="04" eyebrow="Contact" title="Let's work together." />
+      <SectionHeading
+        id="contact-heading"
+        index="04"
+        eyebrow="Contact"
+        title="Let's work together."
+      />
 
       <div className="grid gap-10 lg:grid-cols-[1.5fr_1fr]">
         <Reveal variant="right">
           <div>
             <p className="text-balance text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
-              Have a project in mind, or just want to say hi?{' '}
-              <span className="text-gradient">I&apos;m always happy to chat.</span>
+              Have a project in mind, or just want to say hi?{" "}
+              <span className="text-gradient">
+                I&apos;m always happy to chat.
+              </span>
             </p>
             <a
               href={`mailto:${profile.email}`}
@@ -58,5 +65,5 @@ export function ContactSection() {
         </Reveal>
       </div>
     </section>
-  )
+  );
 }

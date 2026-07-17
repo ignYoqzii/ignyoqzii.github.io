@@ -1,4 +1,4 @@
-import { profile } from '@/lib/site-data'
+import { profile } from "@/lib/site-data";
 
 export function SiteFooter() {
   return (
@@ -17,5 +17,5 @@ export function SiteFooter() {
         </p>
       </div>
     </footer>
-  )
+  );
 }
