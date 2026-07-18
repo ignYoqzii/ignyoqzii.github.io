@@ -15,12 +15,8 @@ export function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Raw pointer offset from the section's horizontal center / top.
   const rawX = useMotionValue(0);
   const rawY = useMotionValue(0);
-
-  // Springs smooth the motion so the glow eases toward the cursor
-  // instead of snapping to it every frame.
   const springX = useSpring(rawX, { stiffness: 60, damping: 20, mass: 0.6 });
   const springY = useSpring(rawY, { stiffness: 60, damping: 20, mass: 0.6 });
 
@@ -30,7 +26,6 @@ export function HeroSection() {
     const offsetX = e.clientX - rect.left - rect.width / 2;
     const offsetY = e.clientY - rect.top;
 
-    // Damping factors keep this a subtle parallax drift, not a hard follow.
     rawX.set(offsetX * 0.15);
     rawY.set(offsetY * 0.08);
   }

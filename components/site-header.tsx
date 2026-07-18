@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { Menu, X } from "lucide-react";
@@ -22,10 +23,12 @@ export function SiteHeader() {
           href="#top"
           className="flex items-center gap-2 rounded-md text-sm font-medium tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
         >
-          <img
+          <Image
             src={profile.logo}
             alt={profile.name}
-            className="size-8 rounded-full"
+            width={32}
+            height={32}
+            className="size-8 rounded-full object-cover"
           />
           <span className="font-semibold">{profile.name}</span>
           <span className="ml-2 hidden text-muted-foreground sm:inline">
