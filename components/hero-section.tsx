@@ -1,11 +1,44 @@
 "use client";
 
-import { motion, useReducedMotion, type Variants } from "motion/react";
+import { useRef } from "react";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useReducedMotion,
+  type Variants,
+} from "motion/react";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { profile } from "@/lib/site-data";
 
 export function HeroSection() {
   const shouldReduceMotion = useReducedMotion();
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Raw pointer offset from the section's horizontal center / top.
+  const rawX = useMotionValue(0);
+  const rawY = useMotionValue(0);
+
+  // Springs smooth the motion so the glow eases toward the cursor
+  // instead of snapping to it every frame.
+  const springX = useSpring(rawX, { stiffness: 60, damping: 20, mass: 0.6 });
+  const springY = useSpring(rawY, { stiffness: 60, damping: 20, mass: 0.6 });
+
+  function handlePointerMove(e: React.PointerEvent<HTMLElement>) {
+    if (shouldReduceMotion || !sectionRef.current) return;
+    const rect = sectionRef.current.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left - rect.width / 2;
+    const offsetY = e.clientY - rect.top;
+
+    // Damping factors keep this a subtle parallax drift, not a hard follow.
+    rawX.set(offsetX * 0.15);
+    rawY.set(offsetY * 0.08);
+  }
+
+  function handlePointerLeave() {
+    rawX.set(0);
+    rawY.set(0);
+  }
 
   const container: Variants = {
     hidden: {},
@@ -29,13 +62,29 @@ export function HeroSection() {
   return (
     <section
       id="top"
+      ref={sectionRef}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden"
+      className="relative isolate overflow-hidden"
     >
-      {/* Soft spotlight glow behind the hero */}
-      <div
+      {/* Soft spotlight glow behind the hero, drifts toward the cursor */}
+      <motion.div
         aria-hidden="true"
         className="hero-spotlight pointer-events-none absolute left-1/2 top-[-10%] -z-10 h-130 w-205 max-w-[140vw]"
+        style={{ x: springX, y: springY }}
+        initial={{ opacity: shouldReduceMotion ? 0.65 : 0.5, scale: 1 }}
+        animate={
+          shouldReduceMotion
+            ? undefined
+            : { opacity: [0.5, 0.8, 0.5], scale: [1, 1.08, 1] }
+        }
+        transition={
+          shouldReduceMotion
+            ? undefined
+            : { duration: 9, ease: "easeInOut", repeat: Infinity }
+        }
+        transformTemplate={(_, generated) => `translateX(-50%) ${generated}`}
       />
 
       {/* Floating gradient blobs */}
