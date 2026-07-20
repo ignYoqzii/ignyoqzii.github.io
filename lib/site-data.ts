@@ -9,7 +9,7 @@ export const profile = {
   socials: [
     { label: "GitHub", href: "https://github.com/ignYoqzii" },
     { label: "YouTube", href: "https://www.youtube.com/@ignYoqzii" },
-    { label: "Discord", href: "https://discord.gg/ScR9MGbRSY" },
+    { label: "Discord", href: "https://discordapp.com/users/937500438700376104" },
   ],
 };
 
@@ -27,7 +27,7 @@ export const about = {
     "I care about clean interfaces, responsive interactions, and the small details that make software feel human. Whether I'm designing a workflow tool or optimizing a gaming setup, I’m drawn to clarity, motion, and systems that just make sense. I like building things that reduce friction, tools that feel effortless, fast, and enjoyable to use.",
   facts: [
     { label: "Experience", value: "3+ years" },
-    { label: "Projects shipped", value: "6+" },
+    { label: "Projects shipped", value: "6" },
     { label: "Based in", value: "Quebec, Canada" },
     {
       label: "Availability",
