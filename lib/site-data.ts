@@ -110,4 +110,13 @@ export const projects: Project[] = [
     image: "/projects/geoguessrplayer.png",
     href: "https://github.com/ignYoqzii/GeoGuessrPlayer",
   },
+  {
+    title: "Quebec Gas Map",
+    description:
+      "Bilingual Windows application built with NiceGUI to consult gas prices in Quebec from an interactive map..",
+    year: "2026",
+    tags: ["Python", "NiceGUI"],
+    image: "/projects/quebec-gas-map.png",
+    href: "https://github.com/ignYoqzii/QuebecGasMap",
+  },
 ];
