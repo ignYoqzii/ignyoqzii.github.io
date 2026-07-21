@@ -113,7 +113,7 @@ export const projects: Project[] = [
   {
     title: "Quebec Gas Map",
     description:
-      "Bilingual Windows application built with NiceGUI to consult gas prices in Quebec from an interactive map..",
+      "Bilingual Windows application built with NiceGUI to consult gas prices in Quebec from an interactive map.",
     year: "2026",
     tags: ["Python", "NiceGUI"],
     image: "/projects/quebec-gas-map.png",
