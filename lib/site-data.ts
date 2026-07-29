@@ -85,6 +85,14 @@ export const projects: Project[] = [
     href: "https://github.com/ignYoqzii/StarZLauncher",
   },
   {
+    title: "SensorHUD",
+    description: "A fast, customizable PC telemetry widget built for Xbox Game Bar.",
+    year: "2026",
+    tags: ["C#", "XAML", "Xbox Game Bar", "LibreHardwareMonitor"],
+    image: "/projects/sensorhud.png",
+    href: "https://github.com/ignYoqzii/SensorHUD",
+  },
+  {
     title: "StarZ Injector",
     description:
       "Universal DLL Injector for Windows 7 and later, built with a WinUI 3-like interface.",
