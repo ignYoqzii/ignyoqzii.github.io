@@ -5,7 +5,7 @@ export const profile = {
   role: "Software Engineering Student",
   location: "Quebec, Canada",
   tagline: "Engineering clarity into every line of code.",
-  email: "lvsqyo4@gmail.com",
+  email: "Unavailable for Now",
   socials: [
     { label: "GitHub", href: "https://github.com/ignYoqzii" },
     { label: "YouTube", href: "https://www.youtube.com/@ignYoqzii" },
